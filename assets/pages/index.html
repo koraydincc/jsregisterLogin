@@ -14,16 +14,16 @@
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <form onsubmit="Commonjs.loginHandle()">
+    <form onsubmit="return false">
       <div class="container">
         <h2>Giriş Yapın</h2>
         <div class="mb-3">
           <label for="email" class="form-label">Email:</label>
-          <input type="text" id="email" class="form-control" required />
+          <input type="text" id="email" class="form-control" />
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Şifre:</label>
-          <input type="password" id="password" class="form-control" required />
+          <input type="password" id="password" class="form-control" />
         </div>
         <button type="submit" class="btn btn-primary" id="girisBtn">
           Giriş Yap
@@ -34,5 +34,7 @@
       </div>
     </form>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <script src="../js/main.js"></script>
 </html>

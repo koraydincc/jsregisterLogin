@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <form onsubmit="CommonJs.handleRegisterForm()">
+    <form onsubmit="Commonjs.handleRegisterForm()">
       <div class="container">
         <h2>Giriş Yapın</h2>
         <div class="mb-3">
@@ -33,11 +33,13 @@
           <label for="password" class="form-label">Şifre:</label>
           <input type="password" id="password" class="form-control" required />
         </div>
-        <button type="submit" class="btn btn-primary" id="registerBtn">
+        <button type="submit" class="btn btn-primary" id="registerPageBtn">
           Kayıt Ol
         </button>
       </div>
     </form>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <script src="../js/main.js"></script>
 </html>
