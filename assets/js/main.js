@@ -26,16 +26,22 @@ const Commonjs = {
             password: this.registerFormItem.password.value
     
         });
-        
+        localStorage.setItem("users", JSON.stringify(this.users));
+
         this.registerFormCleaner();
-        this.successMessage('Kayıt Başarılı!')
+
+        this.successMessage(`${this.registerFormItem.ad.value} Başarıyla kayıt oldunuz!`);
+
+        setTimeout(() => {
+            this.GoToPage("../pages/index.html")
+        }, 3000);
 
         console.log(this.users);
         
         
     },
     handleLoginForm: function () {
-
+        
 
         
     },
@@ -68,7 +74,13 @@ const Commonjs = {
         this.registerFormItem.email.value = '';
         this.registerFormItem.password.value = '';
         
+    },
+    GoToPage: function (page) {
+        
+        location.href = page;
+        
     }
+
     
 
     
