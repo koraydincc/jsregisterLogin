@@ -59,19 +59,27 @@ const Commonjs = {
       //filter = Dizideki öğeleri filtreler. Filtrenen öğe varsa geriye döndürür yoksa boş dizi döner
       // users dizisinin içindeki email ve password filtreledik. Loginformitem ile eşleşirse değer döndürecek
       let user = this.users.filter(item => {
-        if (
+        return (
           item.email == this.loginFormItem.email.value &&
           item.password == this.loginFormItem.password.value
-        ) {
-          return true;
-        }
+        ) 
+        
+        
       });
       
+      console.log(user)
+
       if (user.length > 0) {
         this.successMessage('Sayfaya Yönlendiriliyorsunuz..');
+        setTimeout(() => {
+          this.GoToPage("../pages/indexApp.html")
+        }, 2000);
       } else {
         this.failEntryMessage('Kullanıcı bulunamadı!');
       }
+
+      this.loginFormCleaner();
+
         
     },
     handleAlreadyUser: function () {
@@ -128,6 +136,12 @@ const Commonjs = {
         this.registerFormItem.password.value = '';
         this.registerFormItem.repassword.value = '';
         
+    },
+    loginFormCleaner: function () {
+      
+       this.loginFormItem.email.value = '',
+       this.loginFormItem.password.value = ''
+
     },
     GoToPage: function (page) {
         
